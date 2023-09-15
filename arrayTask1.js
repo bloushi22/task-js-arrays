@@ -27,3 +27,9 @@ console.log(par([5 , 6 ,7]));
 const temperatures = [72, 68, 74, 80, 76];
 console.log(Math.max(...temperatures));
 
+if (myArray.includes(`Banana`)){
+    return true;
+}
+else {
+    return false;
+}
