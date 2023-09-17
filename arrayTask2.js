@@ -11,15 +11,12 @@
 */
 function isArrayLengthOdd(numbers) {
     // Your code here
-    if (numbers.length %2 === 1){
-        return true;
-    }
-    else {
-        return false;
-    }
-    }
-    numbers = [1 ,2 ,3 ,4 ,5];
-    console.log(isArrayLengthOdd);
+        return numbers.length % 2 !== 0;
+      }
+      
+      // Testing the function
+      console.log(isArrayLengthOdd([1, 2, 3]));
+      console.log(isArrayLengthOdd([1, 2, 3, 4]));
     /**
     
     - isArrayLengthEven(numbers):
@@ -33,7 +30,12 @@ function isArrayLengthOdd(numbers) {
     */
     function isArrayLengthEven(numbers) {
     // Your code here
-    }
+    return numbers.length % 2 !== 0;
+}
+
+    // Testing the function
+    console.log(isArrayLengthOdd([1, 2, 3]));
+    console.log(isArrayLengthOdd([1, 2, 3, 4]));
     
     /**
     
@@ -46,8 +48,14 @@ function isArrayLengthOdd(numbers) {
     */
     function addLailaToArray(instructors) {
     // Your code here
-    }
-    
+        const newArray = [...instructors, "Laila"];
+        return newArray;
+      }
+      
+      // testing
+      const instructors = ["Mshary", "Hasan"];
+      const newArray = addLailaToArray(instructors);
+      console.log(newArray);
     /**
     
     - eliminateTeam(teams):
@@ -59,7 +67,20 @@ function isArrayLengthOdd(numbers) {
     */
     function eliminateTeam(teams) {
     // Your code here
+    if (teams.length > 0) {
+        const removedTeam = teams.pop();
+        return removedTeam;
+      } else {
+        return "empty";
+      }
     }
+    
+    // Testing
+    const teams = ["Brazil", "Germany", "Italy"];
+    const removedTeam = eliminateTeam(teams);
+    console.log(removedTeam);
+    console.log(teams);
+
     
     /**
     
@@ -75,7 +96,26 @@ function isArrayLengthOdd(numbers) {
     */
     function secondHalfOfArrayIfItIsEven(fruits) {
     // Your code here
+    const length = fruits.length;
+
+   if (length % 2 === 0 && length > 0) {
+      const middleIndex = length / 2;
+      const secondHalf = fruits.slice(middleIndex);
+      return secondHalf;
+    } 
+    else {
+      return [];
     }
+  }
+  
+  // Testing
+  const fruits1 = ["apple", "orange", "banana", "kiwi"];
+  const result1 = secondHalfOfArrayIfItIsEven(fruits1);
+  console.log(result1);
+  
+  const fruits2 = ["apple", "orange", "banana", "kiwi", "blueberry"];
+  const result2 = secondHalfOfArrayIfItIsEven(fruits2);
+  console.log(result2);
     
     /**
     
@@ -95,4 +135,16 @@ function isArrayLengthOdd(numbers) {
     */
     function youGottaCalmDown(shout) {
     // Your code here
+    const firstExclamationIndex = shout.indexOf('!');
+
+    if (firstExclamationIndex !== -1) {
+      shout = shout.slice(0, firstExclamationIndex + 1);
     }
+  
+    return shout;
+  }
+  
+  // Testing
+  console.log(youGottaCalmDown("HI!!!!!!!!!!"));
+  console.log(youGottaCalmDown("Taylor Schwifting!!!!!!!!!!!"));
+  console.log(youGottaCalmDown("Hellooooo"));
